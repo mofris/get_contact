@@ -1,3 +1,4 @@
+import 'package:get_contact/app/presentations/onboarding/onboarding_notifier.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -17,4 +18,9 @@ Future<void> initDependency() async {
     ),
   );
   sl.registerSingleton<Dio>(dio);
+
+  // provider
+  sl.registerFactoryParam<OnBoardingNotifier, void, void>(
+    (param1, param2) => OnBoardingNotifier(),
+  );
 }
