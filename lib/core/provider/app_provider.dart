@@ -4,15 +4,21 @@ abstract class AppProvider with ChangeNotifier {
   bool _isLoading = false;
   bool _isDispose = false;
   String _errorMessage = '';
-  String _snackbarMessage = '';
+  String _snackbarErrorMessage = '';
+  String _snackbarSuccessMessage = '';
+  String _snackbarWarningMessage = '';
 
   bool get isLoading => _isLoading;
   bool get isDispose => _isDispose;
   String get errorMessage => _errorMessage;
-  String get snackbarMessage => _snackbarMessage;
+  String get snackbarErrorMessage => _snackbarErrorMessage;
+  String get snackbarWarningMessage => _snackbarWarningMessage;
+  String get snackbarSuccessMessage => _snackbarSuccessMessage;
 
   set errorMeesage(String param) => _errorMessage = param;
-  set snackbarMessage(String param) => _snackbarMessage = param;
+  set snackbarErrorMessage(String param) => _snackbarErrorMessage = param;
+  set snackbarWarningMessage(String param) => _snackbarWarningMessage = param;
+  set snackbarSuccessMessage(String param) => _snackbarSuccessMessage = param;
 
   void showLoading() {
     _isLoading = true;
