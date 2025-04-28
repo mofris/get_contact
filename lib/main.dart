@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_contact/app/presentations/onboarding/onboarding_screen.dart';
+import 'package:get_contact/app/presentations/splash/splash_screen.dart';
 import 'package:get_contact/core/di/dependency.dart';
 import 'package:get_contact/core/helper/dialog_helper.dart';
 import 'package:get_contact/core/widgets/error_app_widget.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
       ),
       home: Scaffold(
-        body: OnBoardingScreen(),
+        body: SplashScreen(),
       ),
     );
   }
