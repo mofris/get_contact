@@ -11,6 +11,11 @@ class SharedPreferencesHelper {
     pref.setString(key, value);
   }
 
+  static setBool(String key, bool value) async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setBool(key, value);
+  }
+
   static getInt(String key) async {
     final pref = await SharedPreferences.getInstance();
     return pref.getInt(key);
@@ -19,6 +24,12 @@ class SharedPreferencesHelper {
   static getString(String key) async {
     final pref = await SharedPreferences.getInstance();
     return pref.getString(key);
+  }
+
+  // Mengambil data bool
+  static Future<bool> getBool(String key, {bool defaultValue = false}) async {
+    final pref = await SharedPreferences.getInstance();
+    return pref.getBool(key) ?? defaultValue; // kalau null, return default
   }
 
   static logout() async {

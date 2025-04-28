@@ -1,3 +1,4 @@
+import 'package:get_contact/app/presentations/home/home_notifier.dart';
 import 'package:get_contact/app/presentations/onboarding/onboarding_notifier.dart';
 import 'package:get_contact/app/presentations/splash/splash_notifier.dart';
 import 'package:get_it/get_it.dart';
@@ -26,5 +27,8 @@ Future<void> initDependency() async {
   );
   sl.registerFactoryParam<SplashNotifier, void, void>(
     (param1, param2) => SplashNotifier(),
+  );
+  sl.registerFactoryParam<HomeNotifier, void, void>(
+    (param1, param2) => HomeNotifier(),
   );
 }

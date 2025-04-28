@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_contact/app/presentations/home/home_screen.dart';
 import 'package:get_contact/app/presentations/onboarding/onboarding_notifier.dart';
 import 'package:get_contact/core/helper/dialog_helper.dart';
 import 'package:get_contact/core/helper/global_helper.dart';
@@ -113,11 +114,16 @@ class OnBoardingScreen extends AppWidget<OnBoardingNotifier, void, void> {
                           duration: const Duration(milliseconds: 500),
                         );
                       } else {
-                        // Navigator.pushNamed(context, logInScreenRoute);
-                        DialogHelper.showSuccessSnackbar(
-                          context: context,
-                          text: 'Success',
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
                         );
+                        // DialogHelper.showSuccessSnackbar(
+                        //   context: context,
+                        //   text: 'Success',
+                        // );
                       }
                     },
                     style: ElevatedButton.styleFrom(
